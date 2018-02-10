@@ -91,7 +91,11 @@ class Domain extends Core {
   public function domainSuggestions($keyWord, $tld = NULL, $exactMatch = FALSE) {
     $options = array();
     $options['keyword'] = $keyWord;
-    $options['tld-only'] = $tld;
+
+      if(!is_null($tld)) {
+          $options['tld-only'] = $tld;
+      }
+
     $options['exact-match'] = $exactMatch;
     $this->defaultValidate($options);
     return $this->callApi(METHOD_GET, 'domains', 'suggest-names', $options, 'v5');

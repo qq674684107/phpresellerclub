@@ -9,11 +9,7 @@
  */
 // Include relevant classes
 // TODO: use autoloader, yes we definitely need. This is a mess.
-if (file_exists(__DIR__ . '/../rc-config.php')) {
-  require_once __DIR__ . '/../rc-config.php';
-} else {
-  require_once __DIR__ . '/../rc-config.sample.php';
-}
+
 // Exceptions
 require_once __DIR__ . '/exception/ApiConnectionException.php';
 require_once __DIR__ . '/exception/InvalidArrayException.php';
